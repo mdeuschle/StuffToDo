@@ -15,6 +15,7 @@
 		A88242B0207EE8D4001DCCCB /* StuffToDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88242AF207EE8D4001DCCCB /* StuffToDoTests.swift */; };
 		A88242BF207EEEB7001DCCCB /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88242BD207EEEB7001DCCCB /* ItemCell.swift */; };
 		A88242C0207EEEB7001DCCCB /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88242BE207EEEB7001DCCCB /* ItemCell.xib */; };
+		A88242C2207EFEB8001DCCCB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88242C1207EFEB8001DCCCB /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		A88242B1207EE8D4001DCCCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A88242BD207EEEB7001DCCCB /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		A88242BE207EEEB7001DCCCB /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		A88242C1207EFEB8001DCCCB /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		A88242BC207EEA23001DCCCB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A88242C1207EFEB8001DCCCB /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A88242C2207EFEB8001DCCCB /* Item.swift in Sources */,
 				A882429D207EE8D3001DCCCB /* RootVC.swift in Sources */,
 				A882429B207EE8D3001DCCCB /* AppDelegate.swift in Sources */,
 				A88242BF207EEEB7001DCCCB /* ItemCell.swift in Sources */,
