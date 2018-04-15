@@ -22,6 +22,7 @@ class RootVC: UIViewController, AddItemDelegate {
 
     private func setUpCell() {
         tableView.dataSource = self
+        tableView.delegate = self
         let nib = UINib(nibName: "ItemCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "ItemCell")
         tableView.rowHeight = 60
@@ -59,4 +60,21 @@ extension RootVC: UITableViewDataSource {
         return cell
     }
 }
+
+extension RootVC: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        items.remove(at: indexPath.row)
+        Dao().archive(items: items)
+        tableView.reloadData()
+    }
+}
+
+
+
+
+
+
+
 
