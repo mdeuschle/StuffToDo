@@ -13,14 +13,14 @@ struct Dao {
     let itemsDirectory: String
 
     init() {
-        let directories = NSSearchPathForDirectoriesInDomains(.userDirectory, .userDomainMask, true)
+        let directories = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         itemsDirectory = "\(directories[0])/items)"
     }
 
     func archive(items: [Item]) {
         do {
             let data = try PropertyListEncoder().encode(items)
-            NSKeyedArchiver.archivedData(withRootObject: data)
+            NSKeyedArchiver.archiveRootObject(data, toFile: itemsDirectory)
         } catch {
             print("Archive Error: \(error)")
         }

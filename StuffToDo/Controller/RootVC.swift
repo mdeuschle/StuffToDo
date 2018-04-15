@@ -16,6 +16,11 @@ class RootVC: UIViewController, AddItemDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpCell()
+        items = Dao().unArchiveItems() ?? [Item]()
+    }
+
+    private func setUpCell() {
         tableView.dataSource = self
         let nib = UINib(nibName: "ItemCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "ItemCell")
@@ -24,6 +29,7 @@ class RootVC: UIViewController, AddItemDelegate {
 
     func addItem(item: Item) {
         items.append(item)
+        Dao().archive(items: items)
         tableView.reloadData()
     }
     
