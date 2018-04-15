@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Item {
+struct Item: Codable {
 
     let title: String
     let dateCreated = Date()

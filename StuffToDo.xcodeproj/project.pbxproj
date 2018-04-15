@@ -18,6 +18,7 @@
 		A88242C2207EFEB8001DCCCB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88242C1207EFEB8001DCCCB /* Item.swift */; };
 		A88242C9207F05E4001DCCCB /* AddStuffVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88242C7207F05E4001DCCCB /* AddStuffVC.swift */; };
 		A88242CA207F05E4001DCCCB /* AddStuffVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88242C8207F05E4001DCCCB /* AddStuffVC.xib */; };
+		A882433A2082FB60001DCCCB /* Dao.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88243392082FB60001DCCCB /* Dao.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		A88242C1207EFEB8001DCCCB /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		A88242C7207F05E4001DCCCB /* AddStuffVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStuffVC.swift; sourceTree = "<group>"; };
 		A88242C8207F05E4001DCCCB /* AddStuffVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStuffVC.xib; sourceTree = "<group>"; };
+		A88243392082FB60001DCCCB /* Dao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dao.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				A88242C1207EFEB8001DCCCB /* Item.swift */,
+				A88243392082FB60001DCCCB /* Dao.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			files = (
 				A88242C9207F05E4001DCCCB /* AddStuffVC.swift in Sources */,
 				A88242C2207EFEB8001DCCCB /* Item.swift in Sources */,
+				A882433A2082FB60001DCCCB /* Dao.swift in Sources */,
 				A882429D207EE8D3001DCCCB /* RootVC.swift in Sources */,
 				A882429B207EE8D3001DCCCB /* AppDelegate.swift in Sources */,
 				A88242BF207EEEB7001DCCCB /* ItemCell.swift in Sources */,
