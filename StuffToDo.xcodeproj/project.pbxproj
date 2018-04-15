@@ -16,6 +16,8 @@
 		A88242BF207EEEB7001DCCCB /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88242BD207EEEB7001DCCCB /* ItemCell.swift */; };
 		A88242C0207EEEB7001DCCCB /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88242BE207EEEB7001DCCCB /* ItemCell.xib */; };
 		A88242C2207EFEB8001DCCCB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88242C1207EFEB8001DCCCB /* Item.swift */; };
+		A88242C9207F05E4001DCCCB /* AddStuffVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88242C7207F05E4001DCCCB /* AddStuffVC.swift */; };
+		A88242CA207F05E4001DCCCB /* AddStuffVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88242C8207F05E4001DCCCB /* AddStuffVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		A88242BD207EEEB7001DCCCB /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		A88242BE207EEEB7001DCCCB /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		A88242C1207EFEB8001DCCCB /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		A88242C7207F05E4001DCCCB /* AddStuffVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStuffVC.swift; sourceTree = "<group>"; };
+		A88242C8207F05E4001DCCCB /* AddStuffVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStuffVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				A882429C207EE8D3001DCCCB /* RootVC.swift */,
+				A88242C7207F05E4001DCCCB /* AddStuffVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 				A882429E207EE8D3001DCCCB /* Main.storyboard */,
 				A88242BD207EEEB7001DCCCB /* ItemCell.swift */,
 				A88242BE207EEEB7001DCCCB /* ItemCell.xib */,
+				A88242C8207F05E4001DCCCB /* AddStuffVC.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -213,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A88242C0207EEEB7001DCCCB /* ItemCell.xib in Resources */,
+				A88242CA207F05E4001DCCCB /* AddStuffVC.xib in Resources */,
 				A88242A5207EE8D3001DCCCB /* LaunchScreen.storyboard in Resources */,
 				A88242A2207EE8D3001DCCCB /* Assets.xcassets in Resources */,
 				A88242A0207EE8D3001DCCCB /* Main.storyboard in Resources */,
@@ -233,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A88242C9207F05E4001DCCCB /* AddStuffVC.swift in Sources */,
 				A88242C2207EFEB8001DCCCB /* Item.swift in Sources */,
 				A882429D207EE8D3001DCCCB /* RootVC.swift in Sources */,
 				A882429B207EE8D3001DCCCB /* AppDelegate.swift in Sources */,

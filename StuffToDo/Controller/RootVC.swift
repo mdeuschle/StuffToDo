@@ -8,9 +8,9 @@
 
 import UIKit
 
-class RootVC: UIViewController {
+class RootVC: UIViewController, AddItemDelegate {
 
-    let items = ["Buy Eggs", "Pay Bills", "Go Running"]
+    var items = [Item]()
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -20,6 +20,17 @@ class RootVC: UIViewController {
         let nib = UINib(nibName: "ItemCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "ItemCell")
         tableView.rowHeight = 60
+    }
+
+    func addItem(item: Item) {
+        items.append(item)
+        tableView.reloadData()
+    }
+    
+    @IBAction func addStuffButtonTapped(_ sender: UIBarButtonItem) {
+        let addStuffVC = AddStuffVC(addItemDelgate: self)
+        addStuffVC.addItemDelegate = self
+        navigationController?.pushViewController(addStuffVC, animated: true)
     }
 }
 
@@ -38,7 +49,7 @@ extension RootVC: UITableViewDataSource {
             return UITableViewCell()
         }
         let item = items[indexPath.row]
-        cell.configCell(label: item)
+        cell.configCell(label: item.title)
         return cell
     }
 }
