@@ -7,7 +7,7 @@
 //
 
 protocol AddItemDelegate {
-    func addItem(item: Item)
+    func add(item: Item)
 }
 
 import UIKit
@@ -44,7 +44,7 @@ class AddStuffVC: UIViewController {
                 return
         }
         if !text.isEmpty {
-            addItemDelegate?.addItem(item: item)
+            addItemDelegate?.add(item: item)
             navigationController?.popViewController(animated: true)
         }
     }

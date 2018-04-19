@@ -10,17 +10,22 @@ import UIKit
 
 class RootVC: UIViewController, AddItemDelegate {
 
-    var items = [Item]()
+    // MARK: Properties
+    private var items = [Item]()
+    private var filteredItems = [Item]()
+    private var isFiltering = false
 
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpCell()
+        setupCell()
+        setUpSearchController()
         items = Dao().unArchiveItems() ?? [Item]()
     }
 
-    private func setUpCell() {
+    // MARK: Private Methods
+    private func setupCell() {
         tableView.dataSource = self
         tableView.delegate = self
         let nib = UINib(nibName: "ItemCell", bundle: nil)
@@ -28,7 +33,13 @@ class RootVC: UIViewController, AddItemDelegate {
         tableView.rowHeight = 60
     }
 
-    func addItem(item: Item) {
+    private func loadItems() {
+        items = Dao().unArchiveItems() ?? [Item]()
+        tableView.reloadData()
+    }
+
+    // MARK: Delegate Methods
+    func add(item: Item) {
         items.append(item)
         Dao().archive(items: items)
         tableView.reloadData()
@@ -48,14 +59,15 @@ extension RootVC: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return isFiltering ? filteredItems.count : items.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as? ItemCell else {
             return UITableViewCell()
         }
-        let item = items[indexPath.row]
+        let index = indexPath.row
+        let item = isFiltering ? filteredItems[index] : items[index]
         cell.configCell(label: item.title)
         return cell
     }
@@ -67,6 +79,30 @@ extension RootVC: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         items.remove(at: indexPath.row)
         Dao().archive(items: items)
+        tableView.reloadData()
+    }
+}
+
+extension RootVC: UISearchControllerDelegate {
+
+    private func setUpSearchController() {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.delegate = self
+        searchController.searchResultsUpdater = self
+        navigationItem.searchController = searchController
+    }
+}
+
+extension RootVC: UISearchResultsUpdating {
+
+    func updateSearchResults(for searchController: UISearchController) {
+        if let text = searchController.searchBar.text, !text.isEmpty {
+            isFiltering = true
+            filteredItems = items.filter { $0.title.lowercased().contains(text.lowercased()) }
+        } else {
+            isFiltering = false
+            filteredItems = [Item]()
+        }
         tableView.reloadData()
     }
 }
